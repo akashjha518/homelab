@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This home lab is a personal cybersecurity environment for hands-on learning, experimentation, troubleshooting, and development of practical cybersecurity and SOC Analyst skills.
+This home lab is a controlled environment for practical cybersecurity, Linux, networking, vulnerability-assessment, troubleshooting, and SOC Analyst learning.
 
 ## Current Environment
 
@@ -11,52 +11,60 @@ This home lab is a personal cybersecurity environment for hands-on learning, exp
 | Hypervisor | Oracle VirtualBox 7.2.14 r174565 |
 | Virtual Network | `TestNetwork` |
 | Network Type | NAT Network |
-| Network Range | `10.0.2.0/24` |
+| Network | `10.0.2.0/24` |
 | Gateway | `10.0.2.1` |
 | DHCP | Enabled |
-| Virtual Machines | Kali Linux + Ubuntu |
+| VMs | Kali, Ubuntu, Metasploitable 2 |
 
-## Virtual Machines
+## Machines
 
 ### 🔴 Kali Linux
 
-- VM name: `kali-linux-2026.2-virtualbox-amd64`
+- VM: `kali-linux-2026.2-virtualbox-amd64`
 - OS: Kali Linux 2026.2
 - Hostname: `kali`
 - CPU: 2 vCPU
 - RAM: 4 GB
 - Storage: 80.09 GB VDI
-- Interface: `eth0`
 - IP: `10.0.2.4`
+- Interface: `eth0`
 - MAC: `08:00:27:5A:87:BC`
 
 ### 🟢 Ubuntu
 
-- VM name: `ubuntu`
+- VM: `ubuntu`
 - OS: Ubuntu 26.04 LTS
-- Codename: Resolute Raccoon
 - Hostname: `Ubuntu`
 - CPU: 2 vCPU
 - RAM: 4 GB
 - Storage: 40.00 GB VDI
-- Interface: `enp0s3`
 - IP: `10.0.2.15`
+- Interface: `enp0s3`
 - MAC: `08:00:27:52:5B:39`
 
-## Lab Design
+### 🟠 Metasploitable 2
 
-Both virtual machines are attached to the same VirtualBox NAT Network, allowing them to communicate within the lab network while using the configured virtual gateway.
-
-The IP addresses shown above are DHCP-assigned and may change.
+- VM: `metasploitable2`
+- VirtualBox OS type: Ubuntu (64-bit)
+- Hostname: `metasploitable`
+- CPU: 1 vCPU
+- RAM: 512 MB
+- Storage: 8.00 GB VMDK
+- IP: `10.0.2.6`
+- Interface: `eth0`
+- MAC: `08:00:27:4E:D9:5E`
+- Role: Intentionally vulnerable training target
 
 ## Documentation Method
 
-For each lab exercise, document:
+Each lab should document:
 
 1. Objective
 2. Environment
-3. Configuration
-4. Commands/actions
-5. Results
-6. Troubleshooting
-7. Lessons learned
+3. Methodology
+4. Commands and tools
+5. Evidence
+6. Findings
+7. Analysis
+8. Troubleshooting
+9. Lessons learned
